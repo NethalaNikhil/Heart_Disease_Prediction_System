@@ -1,0 +1,84 @@
+<html>
+<head>
+	<title> Heart Disease Prediction System</title>
+	<link rel="alternate" href="house_rent_web.html" hreflang="en-gb">
+	<style>
+		#submit{  
+    width: 200px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    background-color: #f44336;
+  
+}  
+	</style>
+</head>
+<body bgcolor="lightgrey">
+
+	<!--<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+<center>
+	<br>
+	<h1>Heart Disease Prediction System </h1>
+    <br>
+	<form method="POST" action="{{ url_for('home1')}}">
+		
+	Age:<input type="text" name="a" placeholder="enter Age in Years" required>
+	<br><br>
+	Gender:<select name="b">
+		<option value=1>Male</option>
+		<option value=2>Female</option>
+	</select>
+	<br><br>
+	Height:<input type="text" name="c" placeholder="enter Height in cm" required>
+	<br><br>
+	Weight:<input type="text" name="d" placeholder="enter Weight in Kg" required>
+	<br><br>
+	Systolic blood pressure:<input type="text" name="e" placeholder="enter Systolic blood pressure" required>
+	<br><br>
+	Diastolic blood pressure:<input type="text" name="f" placeholder="enter Diastolic blood pressure" required>
+	<br><br>
+	cholesterol Level:<select name="g">
+		<option value=1>Normal</option>
+		<option value=2>Above Normal</option>
+		<option value=3>Well Above Normal</option>
+	</select>
+	<br><br>
+	Glucose Level:<select name="h">
+		<option value=1>Normal</option>
+		<option value=2>Above Normal</option>
+		<option value=3>Well Above Normal</option>
+	</select>
+	<br><br>
+
+
+    Habit of Smoking ?:<select name="i">
+			<option value=1>Yes</option>
+			<option value=0>No</option>
+		</select>
+	<br><br>
+	Habit of Drinking Alcohol ?:<select name="j">
+			<option value=1>Yes</option>
+			<option value=0>No</option>
+		</select>
+	<br><br>
+
+	Involvement in Physical Activities ?:<select name="k">
+		<option value=1>Yes</option>
+		<option value=0>No</option>
+		</select>
+	<br><br>
+	<input type="submit" id="submit" value="SUBMIT">
+	</form>
+	
+</center>
+</body>
+</html>

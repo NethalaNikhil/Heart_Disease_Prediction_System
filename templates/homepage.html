@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Webpage Title</title>
+
+    <!-- Link to the Google Fonts API for Poppins font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,400&display=swap">
+
+    <style>
+        :root {
+            --primary: #1f2e88;
+            --secondary: #2f66d4;
+            --hover: #a2d9f5;
+            --black: #333;
+            --white: #fff;
+            --light-color: #666;
+            --light-bg: #eee;
+            --border: .2rem solid rgba(0, 0, 0, 0.1);
+            --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            outline: none;
+            border: none;
+            transition: 0.2s linear;
+        }
+
+        html {
+            font-size: 62.2%;
+            overflow-x: hidden;
+            scroll-padding-top: 9rem;
+            scroll-behavior: smooth;
+        }
+
+        html::-webkit-scrollbar {
+            width: .8rem;
+        }
+
+        html::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5rem;
+        }
+
+        /* global classes */
+
+        section {
+            padding: 5rem 7%;
+        }
+
+        .heading {
+            font-size: 4rem;
+            text-align: center;
+            color: var(--black);
+            text-transform: uppercase;
+            font-weight: bolder;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            margin-top: 1rem;
+            display: inline-block;
+            padding: 1rem 3rem;
+            border-radius: .5rem;
+            background: var(--primary);
+            font-size: 1.7rem;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+        }
+
+        /* header */
+        .header {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 9%;
+            background: var(--white);
+            box-shadow: var(--box-shadow);
+            z-index: 1000;
+        }
+
+        .header .logo {
+            font-size: 2.5rem;
+            font-weight: bolder;
+            color: var(--black);
+        }
+
+        .header .navbar a {
+            font-size: 1.7rem;
+            color: var(--black);
+            margin: 0 1rem;
+        }
+
+        .header .navbar a:hover {
+            color: var(--primary);
+        }
+
+        .header .btn {
+            margin-top: 0;
+        }
+
+        #menu-btn {
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: var(--black);
+            margin-left: 1.7rem;
+            display: none;
+        }
+
+        #menu-btn:hover {
+            color: var(--primary);
+        }
+
+        /* end header */
+
+        /* home */
+        .home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: url("https://www.maxlab.co.in/category/1659696538.jpg") no-repeat;
+            background-size: cover;
+            background-position: center top;
+        }
+
+        .home .content {
+            max-width: 60rem;
+            padding-top: 10rem;
+            padding-left: 6rem;
+        }
+
+        .home .content h3 {
+            font-size: 6rem;
+            color: var(--black);
+            line-height: 1.2;
+        }
+
+        .home .content p {
+            line-height: 2;
+            font-size: 1.5rem;
+            color: var(--light-color);
+            padding: 1rem 0;
+        }
+
+        /* end home */
+
+        /* about us */
+        .about .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .about .row .image {
+            flex: 1 1 50rem;
+        }
+
+        .about .row .image img {
+            width: 100%;
+            height: 200%;
+            border-radius: 5rem;
+        }
+
+        .about .row .content {
+            flex: 1 1 40rem;
+        }
+
+        .about .row .content h3 {
+            color: var(--black);
+            font-size: 3.5rem;
+            line-height: 1.5;
+        }
+
+        .about .row .content p {
+            font-size: 1.4rem;
+            color: var(--light-color);
+            padding: 1rem 0;
+            line-height: 2;
+        }
+        /* end about */
+    </style>
+</head>
+
+<body>
+
+    <!-- start header -->
+    <header class="header">
+        <!-- start logo -->
+        <a href="#" class="logo">
+            <!-- <i class="fas fa-tooth"></i> -->
+            CardioCare
+        </a>
+        <!-- start navbar -->
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+        </nav>
+        <!-- end navbar -->
+        <!--<a href="{{ url_for('input') }}" class="btn">Predict</a>-->
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <!-- end header -->
+
+    <!-- start home -->
+    <section id="home" class="home">
+        <div class="content">
+            <h3>Check Your Heart Risk</h3>
+            <a href="{{ url_for('input') }}" class="btn">Predict</a>
+        </div>
+    </section>
+    <!-- end home -->
+
+    <!-- about -->
+    <section id="about" class="about">
+        <h1 class="heading"> about us </h1>
+        <!-- content -->
+        <div class="row">
+            <!-- image -->
+            <div class="image">
+                <img src="https://www.carehospitals.com/assets/images/main/best-heart-hospitals-in-india.webp"
+                    alt="medical equipment">
+            </div>
+            <!-- info -->
+            <div class="content">
+                <h3>Our website focuses on reducing the risk of heart disease by predicting it early and suggesting ways to lower that risk</h3>
+                <p>Our model uses health and lifestyle information to estimate the risk level—normal or at risk —of heart issues.</p>
+                <p>Our goal is to empower people to take control of their heart health by providing personalized advice.
+                     By predicting risks and offering tailored prevention tips, we hope to decrease the number of heart-related problems and promote better overall heart health. </p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+    </section>
+    <!-- end about -->
+
+</body>
+
+</html>
